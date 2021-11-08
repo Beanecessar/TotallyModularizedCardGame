@@ -1,1 +1,0 @@
-pyxeleditor Table.pyxres
