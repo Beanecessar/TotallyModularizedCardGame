@@ -6,6 +6,8 @@ ScreenSize = (ScreenWidth, ScreenHeight)
 TableWidth = 200
 TableHeight = 120
 
+DrawInSpacing = 6
+
 TileWidth = 18
 TileHeight = 24
 # Singleton

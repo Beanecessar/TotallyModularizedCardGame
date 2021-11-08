@@ -29,6 +29,8 @@ class MApplication:
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
 					return
+				elif event.type == pygame.MOUSEBUTTONUP:
+					self.mouseReleaseEvent(event)
 			self.update()
 			self.draw(self.screen)
 			pygame.display.flip()
@@ -45,3 +47,7 @@ class MApplication:
 		screen.fill((0,0,0))
 		self.table.draw(screen)
 		self.hand.draw(screen)
+
+	def mouseReleaseEvent(self, event):
+		if self.hand.rect.collidepoint(event.pos):
+			self.hand.mouseReleaseEvent(event)

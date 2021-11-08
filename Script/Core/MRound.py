@@ -20,14 +20,15 @@ class MRound(object):
 	def start(self):
 		self.wall = MWall(self.ruler.hasHoleCards, self.ruler.allTiles.copy())
 		self.wall.shuffle()
-		# for i in range(self.ruler.numOfPlayer):
-		# 	hand = MHand()
-		# 	self.players.append(MPlayer(hand, self.ruler.startPoints))
-		# ----------
-		self.players.append(MPlayer(self.ruler.startPoints))
-		for i in range(self.ruler.numOfPlayer - 1):
-			self.players.append(AIPlayer(self.ruler.startPoints))
-		# ----------
+		self.players.append(MPlayer())
+		if True: # AddAIPlayers
+			for i in range(self.ruler.numOfPlayer - 1):
+				self.players.append(AIPlayer())
+		else:
+			for i in range(self.ruler.numOfPlayer - 1):
+				self.players.append(MPlayer())
+		for player in self.players:
+			player.points = self.ruler.startPoints
 		bankerIndex = random.randint(0, len(self.players)-1)
 		self.banker = self.players[bankerIndex]
 		self.banker.pos = Wind.East

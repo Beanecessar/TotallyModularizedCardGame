@@ -9,7 +9,7 @@ tilesNoJoker = [
 	"1z", "2z", "3z", "4z", "5z", "6z", "7z"
 ]
 
-ruler = MRuler(MRuleSet())
+ruler = MRuler()
 for i in range(10):
 	# 每种牌4张
 	walls = tilesNoJoker*4
